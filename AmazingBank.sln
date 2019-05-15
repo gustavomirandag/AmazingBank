@@ -3,9 +3,46 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.539
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Presentation", "0 - Presentation", "{440EB41B-4851-4794-813B-ECFA2A116A97}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Application", "1 - Application", "{98D87E9A-B6C6-429C-9E95-4B81545EF870}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Domain", "2 - Domain", "{F2B80AE2-B5A6-45E2-81E0-5A0E7D851DFB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Infrastructure", "3 - Infrastructure", "{D8D65884-C0A9-4018-81E1-B32254712802}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazingBank.DomainModel", "AmazingBank.DomainModel\AmazingBank.DomainModel.csproj", "{B36651B7-2EC6-4528-9C14-3A9DF98630A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazingBank.Infrastructure.DataAccess", "AmazingBank.Infrastructure.DataAccess\AmazingBank.Infrastructure.DataAccess.csproj", "{BBD56DF9-D0D8-4A4C-AACB-9F4413C05C97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazingBank.DomainService", "AmazingBank.DomainService\AmazingBank.DomainService.csproj", "{3BCEA487-F385-483F-AC73-2294960CF8ED}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B36651B7-2EC6-4528-9C14-3A9DF98630A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B36651B7-2EC6-4528-9C14-3A9DF98630A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B36651B7-2EC6-4528-9C14-3A9DF98630A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B36651B7-2EC6-4528-9C14-3A9DF98630A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBD56DF9-D0D8-4A4C-AACB-9F4413C05C97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBD56DF9-D0D8-4A4C-AACB-9F4413C05C97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBD56DF9-D0D8-4A4C-AACB-9F4413C05C97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBD56DF9-D0D8-4A4C-AACB-9F4413C05C97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BCEA487-F385-483F-AC73-2294960CF8ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BCEA487-F385-483F-AC73-2294960CF8ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BCEA487-F385-483F-AC73-2294960CF8ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BCEA487-F385-483F-AC73-2294960CF8ED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B36651B7-2EC6-4528-9C14-3A9DF98630A3} = {F2B80AE2-B5A6-45E2-81E0-5A0E7D851DFB}
+		{BBD56DF9-D0D8-4A4C-AACB-9F4413C05C97} = {D8D65884-C0A9-4018-81E1-B32254712802}
+		{3BCEA487-F385-483F-AC73-2294960CF8ED} = {F2B80AE2-B5A6-45E2-81E0-5A0E7D851DFB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A4455660-4BED-4A42-A1F9-D98772C79684}
