@@ -10,12 +10,28 @@ namespace AmazingBank.DomainService
     public class ClientService
     {
         private IClientRepository _clientRepository;
-        void AddClient(Client client)
+
+        public ClientService(IClientRepository clientRepository)
+        {
+            _clientRepository = clientRepository;
+        }
+
+        public void AddClient(Client client)
         {
             _clientRepository.Create(client);
         }
 
-        IEnumerable<Client> SearchByName(string name)
+        public IEnumerable<Client> GetAllClients()
+        {
+            return _clientRepository.ReadAll();
+        }
+
+        public Client GetClientById(Guid id)
+        {
+            return _clientRepository.Read(id);
+        }
+
+        public IEnumerable<Client> SearchByName(string name)
         {
             return _clientRepository.ReadAll()
                 .Where(c => c.Name.ToLower()

@@ -7,5 +7,6 @@ namespace AmazingBank.DomainModel.Interfaces.Repositories
 {
     public interface IClientRepository : IRepository<Client,Guid>
     {
+        IEnumerable<Client> FindByName(string name);
     }
 }

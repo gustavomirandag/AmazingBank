@@ -21,6 +21,13 @@ namespace AmazingBank.Infrastructure.DataAccess.Repositories
             _set.Remove(Read(id));
         }
 
+        public IEnumerable<Client> FindByName(string name)
+        {
+            return ReadAll()
+                .Where(cli => cli.Name.ToLower()
+                    .Contains(name.ToLower()));
+        }
+
         public Client Read(Guid id)
         {
             return _set.Find(e => e.Id == id);

@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <UserSecretsId>aspnet-AmazingBank.WebApp-695F47D9-D339-48A0-88BF-75A4FE183396</UserSecretsId>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\AmazingBank.DomainModel\AmazingBank.DomainModel.csproj" />
+    <ProjectReference Include="..\AmazingBank.DomainService\AmazingBank.DomainService.csproj" />
+    <ProjectReference Include="..\AmazingBank.Infrastructure.DataAccess\AmazingBank.Infrastructure.DataAccess.csproj" />
+  </ItemGroup>
+
+</Project>
