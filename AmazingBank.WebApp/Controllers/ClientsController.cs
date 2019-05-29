@@ -7,31 +7,25 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AmazingBank.DomainModel.Entities;
 using AmazingBank.Infrastructure.DataAccess.Contexts;
-using AmazingBank.DomainService;
+using System.Web;
+using AmazingBank.Infrastructure.AzureStorage;
 
 namespace AmazingBank.WebApp.Controllers
 {
     public class ClientsController : Controller
     {
         private readonly AmazingBankContext _context;
-        private readonly ClientService _clientService;
 
-        public ClientsController(AmazingBankContext context)
+        public ClientsController()
         {
+            AmazingBankContext context = new AmazingBankContext();
             _context = context;
         }
 
         // GET: Clients
-        //public async Task<IActionResult> Index()
-        //{
-        //    return _clientService.GetAllClients();
-        //    //return View(await _context.Clients.ToListAsync());
-        //}
-
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View(_clientService.GetAllClients());
-            //return View(await _context.Clients.ToListAsync());
+            return View(await _context.Clients.ToListAsync());
         }
 
         // GET: Clients/Details/5
@@ -63,12 +57,22 @@ namespace AmazingBank.WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Name,Birthday,Phone,Email,PhotoUrl,Id")] Client client)
+        public async Task<IActionResult> Create([Bind("Name,Birthday,Phone,PhotoUrl,Email,Id")] Client client)
         {
             if (ModelState.IsValid)
             {
                 client.Id = Guid.NewGuid();
                 _context.Add(client);
+
+                //==== Upload da foto do Cliente ====
+                for (int i=0; i<Request.Form.Files.Count; i++)
+                {
+                    var file = Request.Form.Files[i];
+                    var blobService = new AzureBlobService();
+                    client.PhotoUrl = blobService.UploadFile(file.FileName,file.OpenReadStream(),"clients", file.ContentType);
+                }
+                //===================================
+
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }

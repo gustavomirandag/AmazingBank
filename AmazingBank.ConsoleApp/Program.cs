@@ -7,6 +7,9 @@ namespace AmazingBank.ConsoleApp
     {
         static void Main(string[] args)
         {
+
+            Amount contaCorrente = Amount.NewAmount("BTC", 1000);
+
             Amount bitWallet = new Amount("BTC", 4000);
             Amount bitWallet2 = new Amount("BTC", 4000);
             Console.WriteLine($"bitWallet == bitWallet2: {bitWallet == bitWallet2}");
@@ -16,7 +19,7 @@ namespace AmazingBank.ConsoleApp
             Console.WriteLine($"dollarWallet == dollarWallet2: {dollarWallet == dollarWallet2}");
 
             bitWallet++;
-            Console.WriteLine(bitWallet);
+            Console.WriteLine(bitWallet.ToString());
 
             bitWallet = bitWallet + 100;
             Console.WriteLine(bitWallet);
@@ -29,6 +32,8 @@ namespace AmazingBank.ConsoleApp
             Currency btc = new Currency("BTC");
             Currency usd = new Currency("USD");
             Console.WriteLine($"btc == usd: {btc == usd}");
+
+            bitWallet = Amount.Parse("BTC 90000");
 
             Console.ReadLine();
         }

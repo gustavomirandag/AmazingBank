@@ -29,6 +29,14 @@ namespace AmazingBank.DomainModel.ValueObjects
             return new Amount(currency, value);
         }
 
+        public static Amount Parse(string amountStr)
+        {
+            var splittedAmount = amountStr.Split(' ');
+            Currency currency = splittedAmount[0];
+            Decimal value = Decimal.Parse(splittedAmount[1]);
+            return new Amount(currency, value);
+        }
+
         public static Amount operator +(Amount amount1, Amount amount2)
         {
             if (amount1.Currency != amount2.Currency)
@@ -58,14 +66,16 @@ namespace AmazingBank.DomainModel.ValueObjects
         public static bool operator ==(Amount amount1, Amount amount2)
         {
             if (amount1.Currency != amount2.Currency)
-                throw new InvalidCastException("Invalid cast in sum operation.", new Exception("Amounts Currency needs to be of the same type."));
+                return false;
+                //throw new InvalidCastException("Invalid cast in sum operation.", new Exception("Amounts Currency needs to be of the same type."));
             return amount1.Value == amount2.Value;
         }
 
         public static bool operator != (Amount amount1, Amount amount2)
         {
             if (amount1.Currency != amount2.Currency)
-                throw new InvalidCastException("Invalid cast in sum operation.", new Exception("Amounts Currency needs to be of the same type."));
+                return true;
+                //throw new InvalidCastException("Invalid cast in sum operation.", new Exception("Amounts Currency needs to be of the same type."));
             return amount1.Value != amount2.Value;
         }
 
@@ -76,13 +86,13 @@ namespace AmazingBank.DomainModel.ValueObjects
 
         public static Amount operator -(Amount amount, int value)
         {
-            return new Amount(amount.Currency, amount.Value + value);
+            return new Amount(amount.Currency, amount.Value - value);
         }
 
-        //public static implicit operator Decimal(Amount c)
-        //{
-        //    return c.Value;
-        //}
+        public static implicit operator Decimal(Amount amount)
+        {
+            return amount.Value;
+        }
 
         public override bool Equals(object obj)
         {

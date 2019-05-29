@@ -118,6 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="DbConnectionString" xml:space="preserve">
-    <value>Server=tcp:amazingbankserver.database.windows.net,1433;Initial Catalog=AmazingBankDb;Persist Security Info=False;User ID=milton;Password=@dsInf123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;</value>
+    <value>COLOQUE AQUI A STRING DE CONEXÃO</value>
   </data>
 </root>

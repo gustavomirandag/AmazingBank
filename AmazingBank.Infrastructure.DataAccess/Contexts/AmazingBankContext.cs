@@ -10,6 +10,11 @@ namespace AmazingBank.Infrastructure.DataAccess.Contexts
     {
         public DbSet<Client> Clients { get; set; }
 
+        public AmazingBankContext()
+        {
+            Database.EnsureCreated();
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
