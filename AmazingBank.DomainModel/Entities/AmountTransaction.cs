@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AmazingBank.DomainModel.Entities
 {
-    public class Transaction : EntityBase<Guid>
+    public class AmountTransaction : EntityBase<Guid>
     {
         public DateTime DateTime { get; set; }
         public Account Origin { get; set; }

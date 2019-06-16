@@ -24,6 +24,17 @@ namespace AmazingBank.DomainModel.ValueObjects
             Value = value;
         }
 
+        public Amount(string currency, Decimal value)
+        {
+            if (value < Amount.MinValue.Value)
+                throw new ArgumentOutOfRangeException("value", "Value cannot be less then Amount.MinValue (absolute zero)");
+            if (value > Amount.MaxValue.Value)
+                throw new ArgumentOutOfRangeException("value", "Value cannot be more then Amount.MaxValue");
+
+            Currency = new Currency(currency);
+            Value = value;
+        }
+
         public static Amount NewAmount (Currency currency, Decimal value)
         {
             return new Amount(currency, value);
@@ -106,7 +117,7 @@ namespace AmazingBank.DomainModel.ValueObjects
 
         public override string ToString()
         {
-            return $"{Currency} {Value.ToString()}";
+            return $"{Currency.ToString()} {Value.ToString()}";
         }
     }
 }

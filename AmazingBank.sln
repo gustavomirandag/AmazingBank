@@ -17,13 +17,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmazingBank.Infrastructure.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmazingBank.DomainService", "AmazingBank.DomainService\AmazingBank.DomainService.csproj", "{3BCEA487-F385-483F-AC73-2294960CF8ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazingBank.ConsoleApp", "AmazingBank.ConsoleApp\AmazingBank.ConsoleApp.csproj", "{9AB8B609-69BA-403B-BDD7-BD23C15249DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmazingBank.ConsoleApp", "AmazingBank.ConsoleApp\AmazingBank.ConsoleApp.csproj", "{9AB8B609-69BA-403B-BDD7-BD23C15249DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazingBank.WebApp", "AmazingBank.WebApp\AmazingBank.WebApp.csproj", "{37191612-5AF9-4A98-B634-58AB1BD1F6F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmazingBank.WebApp", "AmazingBank.WebApp\AmazingBank.WebApp.csproj", "{37191612-5AF9-4A98-B634-58AB1BD1F6F8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazingBank.WebFormsApp", "AmazingBank.WebFormsApp\AmazingBank.WebFormsApp.csproj", "{DC65875B-8289-41FA-A85D-595D3496FCFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazingBank.Infrastructure.AzureStorage", "AmazingBank.Infrastructure.AzureStorage\AmazingBank.Infrastructure.AzureStorage.csproj", "{4378A281-1871-44CD-A296-72029C34216A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmazingBank.Infrastructure.AzureStorage", "AmazingBank.Infrastructure.AzureStorage\AmazingBank.Infrastructure.AzureStorage.csproj", "{4378A281-1871-44CD-A296-72029C34216A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazingBank.WindowsFormsApp", "AmazingBank.WindowsFormsApp\AmazingBank.WindowsFormsApp.csproj", "{922A46F2-4D54-4EBF-8306-0C60169C9E97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientWebAPI", "ClientWebAPI\ClientWebAPI.csproj", "{CA68E517-5F7D-4F89-9B06-703B635C6CE8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +63,14 @@ Global
 		{4378A281-1871-44CD-A296-72029C34216A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4378A281-1871-44CD-A296-72029C34216A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4378A281-1871-44CD-A296-72029C34216A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{922A46F2-4D54-4EBF-8306-0C60169C9E97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{922A46F2-4D54-4EBF-8306-0C60169C9E97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{922A46F2-4D54-4EBF-8306-0C60169C9E97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{922A46F2-4D54-4EBF-8306-0C60169C9E97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA68E517-5F7D-4F89-9B06-703B635C6CE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA68E517-5F7D-4F89-9B06-703B635C6CE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA68E517-5F7D-4F89-9B06-703B635C6CE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA68E517-5F7D-4F89-9B06-703B635C6CE8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,6 +83,8 @@ Global
 		{37191612-5AF9-4A98-B634-58AB1BD1F6F8} = {440EB41B-4851-4794-813B-ECFA2A116A97}
 		{DC65875B-8289-41FA-A85D-595D3496FCFE} = {440EB41B-4851-4794-813B-ECFA2A116A97}
 		{4378A281-1871-44CD-A296-72029C34216A} = {D8D65884-C0A9-4018-81E1-B32254712802}
+		{922A46F2-4D54-4EBF-8306-0C60169C9E97} = {440EB41B-4851-4794-813B-ECFA2A116A97}
+		{CA68E517-5F7D-4F89-9B06-703B635C6CE8} = {98D87E9A-B6C6-429C-9E95-4B81545EF870}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A4455660-4BED-4A42-A1F9-D98772C79684}

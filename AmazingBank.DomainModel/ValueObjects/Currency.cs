@@ -18,6 +18,12 @@ namespace AmazingBank.DomainModel.ValueObjects
             Code = code;
         }
 
+        public static implicit operator String(Currency currency)
+        {
+            return currency.Code;
+        }
+
+
         public static implicit operator Currency(string currency)
         {
             return new Currency(currency);
@@ -39,7 +45,7 @@ namespace AmazingBank.DomainModel.ValueObjects
 
         public override bool Equals(object obj)
         {
-            return this == (Currency)obj;
+            return this.ToString() == obj.ToString();
         }
 
         public override int GetHashCode()

@@ -61,7 +61,7 @@ namespace AmazingBank.Infrastructure.AzureStorage.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to COLOQUE AQUI A STRING DE CONEXÃO.
+        ///   Looks up a localized string similar to COLOQUE AQUI A STRING DE CONEXÃO DE BLOB (STORAGE ACCOUNT).
         /// </summary>
         internal static string StorageAccountConnectionString {
             get {

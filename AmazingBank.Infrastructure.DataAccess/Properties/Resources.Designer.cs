@@ -61,7 +61,7 @@ namespace AmazingBank.Infrastructure.DataAccess.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to COLOQUE AQUI A STRING DE CONEXÃO.
+        ///   Looks up a localized string similar to COLOQUE AQUI A STRING DE CONEXÃO COM O BANCO DE DADOS.
         /// </summary>
         public static string DbConnectionString {
             get {
