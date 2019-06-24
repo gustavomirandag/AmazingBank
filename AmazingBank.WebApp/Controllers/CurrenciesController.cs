@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using AmazingBank.Infrastructure.DataAccess.Contexts;
-using AmazingBank.Infrastructure.DataAccess.Contexts.Model;
+using AmazingBank.Infra.DataAccess.Contexts;
+using AmazingBank.Infra.DataAccess.Contexts.Model;
 using AmazingBank.DomainModel.ValueObjects;
 
 namespace AmazingBank.WebApp.Controllers

@@ -14,8 +14,8 @@
   <ItemGroup>
     <ProjectReference Include="..\AmazingBank.DomainModel\AmazingBank.DomainModel.csproj" />
     <ProjectReference Include="..\AmazingBank.DomainService\AmazingBank.DomainService.csproj" />
-    <ProjectReference Include="..\AmazingBank.Infrastructure.AzureStorage\AmazingBank.Infrastructure.AzureStorage.csproj" />
-    <ProjectReference Include="..\AmazingBank.Infrastructure.DataAccess\AmazingBank.Infrastructure.DataAccess.csproj" />
+    <ProjectReference Include="..\AmazingBank.Infra.AzureStorage\AmazingBank.Infra.AzureStorage.csproj" />
+    <ProjectReference Include="..\AmazingBank.Infra.DataAccess\AmazingBank.Infra.DataAccess.csproj" />
   </ItemGroup>
 
   <ItemGroup>

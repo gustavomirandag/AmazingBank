@@ -1,0 +1,237 @@
+{
+  "ApplicationName": "AmazingBankTransactions",
+  "DisplayName": "Amazing Bank",
+  "Description": "Transfer Amount of different currencies between accounts.",
+  "ApplicationRoles": [
+    {
+      "Name": "Bank",
+      "Description": "Bank accounts."
+    },
+    {
+      "Name": "FederalRevenue",
+      "Description": "Federal Revenue observer account."
+    }
+  ],
+  "Workflows": [
+    {
+      "Name": "AmazingBankTransactions",
+      "DisplayName": "Account Transaction",
+      "Description": "Main workflow to track end-to-end transportation of perishable goods.",
+      "Initiators": [ "Bank" ],
+      "StartState": "Created",
+      "Properties": [
+        {
+          "Name": "State",
+          "DisplayName": "State",
+          "Description": "Holds the state of the contract",
+          "Type": {
+            "Name": "state"
+          }
+        },
+        {
+          "Name": "Bank",
+          "DisplayName": "Bank",
+          "Description": "Bank Accounts.",
+          "Type": {
+            "Name": "Bank"
+          }
+        },
+        {
+          "Name": "FederalRevenue",
+          "DisplayName": "Federal Revenue - Observer",
+          "Description": "Federal Revenue observing transactions.",
+          "Type": {
+            "Name": "FederalRevenue"
+          }
+        },
+        {
+          "Name": "From",
+          "DisplayName": "From",
+          "Description": "Origin Account",
+          "Type": {
+            "Name": "string"
+          }
+        },
+        {
+          "Name": "To",
+          "DisplayName": "To",
+          "Description": "To Account",
+          "Type": {
+            "Name": "string"
+          }
+        },
+        {
+          "Name": "Currency",
+          "DisplayName": "Currency",
+          "Description": "Amount Currency",
+          "Type": {
+            "Name": "string"
+          }
+        },
+        {
+          "Name": "Amount",
+          "DisplayName": "Amount",
+          "Description": "Amount",
+          "Type": {
+            "Name": "int"
+          }
+        },
+        {
+          "Name": "ComplianceStatus",
+          "DisplayName": "Status",
+          "Description": "Boolean to indicate whether the transaction is in compliance or not.",
+          "Type": {
+            "Name": "bool"
+          }
+        },
+        {
+          "Name": "ComplianceDetail",
+          "DisplayName": "Detail",
+          "Description": "A friendly string indicating the issue.",
+          "Type": {
+            "Name": "string"
+          }
+        },
+        {
+          "Name": "Timestamp",
+          "DisplayName": "Timestamp",
+          "Description": "",
+          "Type": {
+            "Name": "time"
+          }
+        }
+      ],
+      "Constructor": {
+        "Parameters": [
+          {
+            "Name": "from",
+            "Description": "Origin Account",
+            "DisplayName": "From",
+            "Type": {
+              "Name": "string"
+            }
+          },
+          {
+            "Name": "to",
+            "Description": "Destiny Account",
+            "DisplayName": "To",
+            "Type": {
+              "Name": "string"
+            }
+          },
+          {
+            "Name": "currency",
+            "Description": "Amount Currency",
+            "DisplayName": "Currency",
+            "Type": {
+              "Name": "string"
+            }
+          },
+          {
+            "Name": "amount",
+            "Description": "Amount",
+            "DisplayName": "Amount",
+            "Type": {
+              "Name": "int"
+            }
+          }
+        ]
+      },
+      "Functions": [
+        {
+          "Name": "MakeTransaction",
+          "DisplayName": "Make Transaction",
+          "Description": "...",
+          "Parameters": [
+        {
+          "Name": "from",
+          "DisplayName": "From",
+          "Description": "Origin Account",
+          "Type": {
+            "Name": "string"
+          }
+        },
+        {
+          "Name": "to",
+          "DisplayName": "To",
+          "Description": "Destiny Account",
+          "Type": {
+            "Name": "string"
+          }
+        },
+        {
+          "Name": "fromCurrency",
+          "DisplayName": "From Currency",
+          "Description": "Origin Amount Currency",
+          "Type": {
+            "Name": "string"
+          }
+        },
+        {
+          "Name": "toCurrency",
+          "DisplayName": "To Currency",
+          "Description": "Destiny Amount Currency",
+          "Type": {
+            "Name": "string"
+          }
+        },
+        {
+          "Name": "amount",
+          "DisplayName": "Amount",
+          "Description": "Transaction Amount.",
+          "Type": {
+            "Name": "int"
+          }
+        },
+        {
+          "Name": "timestamp",
+          "DisplayName": "Timestamp",
+          "Description": "Transaction timestamp.",
+          "Type": {
+            "Name": "time"
+          }
+        }
+          ]
+        }
+      ],
+      "States": [
+        {
+          "Name": "Created",
+          "DisplayName": "Created",
+          "Description": "...",
+          "PercentComplete": 10,
+          "Value": 0,
+          "Style": "Success",
+          "Transitions": [
+            {
+              "AllowedRoles": [],
+              "AllowedInstanceRoles": [ "Bank" ],
+              "Description": "...",
+              "Function": "MakeTransaction",
+              "NextStates": [ "OutOfCompliance", "Completed" ],
+              "DisplayName": "Make Transaction"
+            }
+          ]
+        },
+        {
+          "Name": "Completed",
+          "DisplayName": "Completed",
+          "Description": "...",
+          "PercentComplete": 100,
+          "Value": 2,
+          "Style": "Success",
+          "Transitions": []
+        },
+        {
+          "Name": "OutOfCompliance",
+          "DisplayName": "Out Of Compliance",
+          "Description": "...",
+          "PercentComplete": 100,
+          "Value": 3,
+          "Style": "Failure",
+          "Transitions": []
+        }
+      ]
+    }
+  ]
+}

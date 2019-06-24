@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AmazingBank.DomainModel.Entities;
-using AmazingBank.Infrastructure.DataAccess.Contexts;
+using AmazingBank.Infra.DataAccess.Contexts;
 using System.Web;
-using AmazingBank.Infrastructure.AzureStorage;
+using AmazingBank.Infra.AzureStorage;
 
 namespace AmazingBank.WebApp.Controllers
 {
@@ -69,7 +69,7 @@ namespace AmazingBank.WebApp.Controllers
                 {
                     var file = Request.Form.Files[i];
                     var blobService = new AzureBlobService();
-                    client.PhotoUrl = blobService.UploadFile(file.FileName,file.OpenReadStream(),"clients", file.ContentType);
+                    client.PhotoUrl = blobService.UploadFileAsync(file.FileName, file.OpenReadStream(), "clients", file.ContentType).Result;
                 }
                 //===================================
 
