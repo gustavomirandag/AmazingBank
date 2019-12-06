@@ -20,7 +20,6 @@ namespace AmazingBank.Infra.DataAccess.Repositories
         public void Create(AmountTransaction transaction)
         {
             _amazingBankContext.Add<AmountTransaction>(transaction);
-            _amazingBankContext.SaveChanges();
         }
 
         public AmountTransaction Read(Guid id)

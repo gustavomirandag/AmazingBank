@@ -12,6 +12,10 @@ using Microsoft.EntityFrameworkCore;
 using AmazingBank.WebApp.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using AmazingBank.DomainModel.Interfaces.UoW;
+using AmazingBank.Infra.DataAccess.UoW;
+using AmazingBank.DomainModel.Interfaces.Repositories;
+using AmazingBank.Infra.DataAccess.Repositories;
 
 namespace AmazingBank.WebApp
 {
@@ -39,6 +43,9 @@ namespace AmazingBank.WebApp
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddScoped<IUnitOfWork, EfUnitOfWork>();
+            services.AddScoped<IAmountTransactionRepository, AmountTransactionEntityFrameworkRepository>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

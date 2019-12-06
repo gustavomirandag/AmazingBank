@@ -22,13 +22,11 @@ namespace AmazingBank.Infra.DataAccess.Repositories
         public void Create(Client entity)
         {
             _db.Clients.Add(entity);
-            _db.SaveChanges();
         }
 
         public void Delete(Guid id)
         {
             _db.Remove(Read(id));
-            _db.SaveChanges();
         }
 
         public IEnumerable<Client> FindByName(string name)
@@ -53,7 +51,6 @@ namespace AmazingBank.Infra.DataAccess.Repositories
         public void Update(Client entity)
         {
             _db.Clients.Update(entity);
-            _db.SaveChanges();
         }
     }
 }

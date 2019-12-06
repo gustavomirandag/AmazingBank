@@ -18,13 +18,11 @@ namespace AmazingBank.Infra.DataAccess.Repositories
         public void Create(Account entity)
         {
             _db.Accounts.Add(entity);
-            _db.SaveChanges();
         }
 
         public void Delete(Guid id)
         {
             _db.Remove(Read(id));
-            _db.SaveChanges();
         }
 
         public Account Read(Guid id)
@@ -40,7 +38,6 @@ namespace AmazingBank.Infra.DataAccess.Repositories
         public void Update(Account entity)
         {
             _db.Accounts.Update(entity);
-            _db.SaveChanges();
         }
 
     }
